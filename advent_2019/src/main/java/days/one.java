@@ -1,3 +1,5 @@
+package days;
+
 /**
  * @author Rogier
  */
@@ -136,8 +138,7 @@ for (int i=0; i< startArray.length;i++){
 
 }
         System.out.println(totataal);
-//5006388 is too high
-//5005523 is too high
+
     }
 
 }

@@ -1,3 +1,5 @@
+package days;
+
 import static java.lang.System.exit;
 
 /**
@@ -48,7 +50,7 @@ public final class two {
 
         }
         return 11;
-//9706668 is too low
+
     }
 }
 

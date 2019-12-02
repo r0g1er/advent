@@ -1,3 +1,5 @@
+package days;
+
 import static java.lang.System.exit;
 
 /**
