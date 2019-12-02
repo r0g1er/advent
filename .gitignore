@@ -1,3 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 target/
-advent_2019/target
+advent_2019/target/*
+*.iml
+.idea/*
+advent_2019/.idea/*
