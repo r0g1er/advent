@@ -17,7 +17,16 @@ public final class ArrayCreator {
 
      }
 
-     public String[] createFromFile(String fileinput) {
+     public int[]createIntArrayFromfile(String fileinput, String regex){
+         String[] stringArray= createFromFile(fileinput, regex);
+         int[] intArray= new int[stringArray.length];
+         for (int i=0; i<stringArray.length;i++) {
+             intArray[i]=Integer.parseInt(stringArray[i]);
+         }
+         return  intArray;
+     }
+
+     public String[] createFromFile(String fileinput, String regex) {
         StringBuilder input = new StringBuilder();
          try {
 
@@ -30,11 +39,11 @@ public final class ArrayCreator {
          }catch (FileNotFoundException e){
              System.out.println("fuuuu" + e);
          }
-         return create(input.toString());
+         return create(input.toString(), regex);
      }
 
-     public String[] create(String input){
-         return input.split(",");
+     public String[] create(String input, String regex){
+         return input.split(regex);
      }
 
 }

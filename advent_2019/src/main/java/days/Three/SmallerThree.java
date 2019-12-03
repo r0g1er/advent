@@ -5,16 +5,18 @@ import java.time.Instant;
 /**
  * Version two of day three. Only to complete the first part of the daily challenge.
  */
+
 public class SmallerThree {
     static final int OORSPRONG = 0;
     static Table<Integer, Integer, Integer> tekenTabel;
 
     public static void main(String[] args) {
         ArrayCreator creator = new ArrayCreator();
-        String[] wireOne = creator.createFromFile("src/main/java/days/Three/inputOne");
-        String[] wireTwo = creator.createFromFile("src/main/java/days/Three/inputTwo");
+        String[] wireOne = creator.createFromFile("src/main/java/days/Three/inputOne", ",");
+        String[] wireTwo = creator.createFromFile("src/main/java/days/Three/inputTwo",",");
         TableDrawer drawer = new TableDrawer();
         tekenTabel = drawer.create(wireOne);
+
 
 
         int tussenstand = Integer.MAX_VALUE;
@@ -61,7 +63,7 @@ public class SmallerThree {
         if (tekenTabel.contains(x, y)) {
             wat = tekenTabel.get(x, y);
             int nieuweWaarde = Math.abs(y) + Math.abs(x);
-            if (wat == 1 && nieuweWaarde < tussenstand) {
+            if (wat != 0 && nieuweWaarde < tussenstand) {
                 tussenstand = nieuweWaarde;
             }
         }

@@ -15,8 +15,8 @@ public class MoreOfThree {
 
     public static void main(String[] args) {
         ArrayCreator creator = new ArrayCreator();
-        String[] wireOne = creator.createFromFile("src/main/java/days/Three/inputOne");
-        String[] wireTwo = creator.createFromFile("src/main/java/days/Three/inputTwo");
+        String[] wireOne = creator.createFromFile("src/main/java/days/Three/inputOne",",");
+        String[] wireTwo = creator.createFromFile("src/main/java/days/Three/inputTwo",",");
         TableDrawer drawer = new TableDrawer();
         tekenTabel = drawer.create(wireOne);
         tekenTabel2 = drawer.create(wireTwo);
