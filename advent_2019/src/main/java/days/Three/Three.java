@@ -2,6 +2,9 @@ package days.Three;
 
 import java.time.Instant;
 
+/**
+ * Version one of day three. Only to complete the first part of the daily challenge.
+ */
 public class Three {
     static int oorsprong = 15000;
     static int maat = 24000;
@@ -117,8 +120,8 @@ public class Three {
     }
 
     static int checkValues(int x, int y, int result) {
-        int a = x-oorsprong;
-        int b = y-oorsprong;
+        int a = x - oorsprong;
+        int b = y - oorsprong;
 //        System.out.println("Coordinaten :" + a + ", "+  b);
 
         if ((Math.abs(oorsprong - y) + Math.abs(oorsprong - x)) < result) {

@@ -1,6 +1,9 @@
 package days.Three;
 
-public class threeB {
+/**
+ *Version one of day three. Only to complete the second part of the daily challenge.
+ */
+public class ThreeB {
 
 
     public static void main(String[] args) {

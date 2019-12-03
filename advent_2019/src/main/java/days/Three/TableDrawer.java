@@ -4,6 +4,8 @@ import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
 
 /**
+ * Creation and completion of tables storing the coordinates and travelled distance.
+ *
  * @author Rogier
  */
 public final class TableDrawer {

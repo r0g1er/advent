@@ -2,7 +2,9 @@ package days.Three;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
-
+/**
+ * Version two of day three. Only to complete the second part of the daily challenge.
+ */
 public class SmallerThreeB {
     static int oorsprong = 0;
     static Table<Integer, Integer, Integer> tekenTabel;

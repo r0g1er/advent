@@ -5,7 +5,11 @@ import java.io.FileReader;
 import java.util.Scanner;
 
 /**
+ * ArrayCreator class can be used to create an Array from input. The input can be a file or a string
+ * the input should be comma separated. No quotation marks.
+ *
  * @author Rogier
+ *
  */
 public final class ArrayCreator {
 

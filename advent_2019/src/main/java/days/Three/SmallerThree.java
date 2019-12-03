@@ -2,7 +2,9 @@ package days.Three;
 
 import com.google.common.collect.Table;
 import java.time.Instant;
-
+/**
+ * Version two of day three. Only to complete the first part of the daily challenge.
+ */
 public class SmallerThree {
     static final int OORSPRONG = 0;
     static Table<Integer, Integer, Integer> tekenTabel;

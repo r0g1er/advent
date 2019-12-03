@@ -3,6 +3,12 @@ package days.Three;
 import com.google.common.collect.Table;
 import java.util.Set;
 
+/**
+ * Version three of day three.
+ * can be used to complete both of the daily challenges
+ * calculates the  manhattan distance from the origin to nearest intersection and
+ * calculates the shortest distance traveled if
+ */
 public class MoreOfThree {
     static Table<Integer, Integer, Integer> tekenTabel;
     static Table<Integer, Integer, Integer> tekenTabel2;
