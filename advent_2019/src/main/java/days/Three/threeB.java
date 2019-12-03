@@ -1,4 +1,4 @@
-package days;
+package days.Three;
 
 public class threeB {
 

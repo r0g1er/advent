@@ -1,4 +1,4 @@
-package days;
+package days.Two;
 
 import static java.lang.System.exit;
 
