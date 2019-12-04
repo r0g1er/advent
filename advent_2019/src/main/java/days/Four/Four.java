@@ -9,31 +9,27 @@ public class Four {
         int MINVALUE = 240298;
         int MAXVALUE = 784956;
         int found = 0;
-//        int digitone = 2;
-//        int digitTwo = 4;
-//        int digitThree = 4;
-//        int digitFour = 4;
-//        int digitFive = 4;
-//        int digitSix = 4;
-        int minimaldigitValue = 2;
-        for (int digitone=2; digitone < 10; digitone++) {
-            for (int digitTwo =0; digitTwo < 10; digitTwo++) {
-                for (int digitThree=0; digitThree < 10; digitThree++) {
-                    for (int digitFour =0; digitFour < 10; digitFour++) {
-                        for (int digitFive =0; digitFive < 10; digitFive++) {
-                            for (int digitSix =0; digitSix < 10; digitSix++) {
 
 
-                                if (ValueCalcualtor(digitone, digitTwo, digitThree, digitFour, digitFive, digitSix) > MINVALUE) {
+        for (int digitOne=2; digitOne < 10; digitOne++) {
+            for (int digitTwo =digitOne; digitTwo < 10; digitTwo++) {
+                for (int digitThree=digitTwo; digitThree < 10; digitThree++) {
+                    for (int digitFour =digitThree; digitFour < 10; digitFour++) {
+                        for (int digitFive =digitFour; digitFive < 10; digitFive++) {
+                            for (int digitSix =digitFive; digitSix < 10; digitSix++) {
 
 
-                                    if (checkForAtLeastOneEquel(digitone, digitTwo, digitThree, digitFour, digitFive, digitSix) &&
-                                            checkIncreasingValues(digitone, digitTwo, digitThree, digitFour, digitFive, digitSix)) {
+                                if (ValueCalcualtor(digitOne, digitTwo, digitThree, digitFour, digitFive, digitSix) > MINVALUE) {
+
+
+                                    if (checkForAtLeastOneEquel(digitOne, digitTwo, digitThree, digitFour, digitFive, digitSix))
+                                    //checkforIncreasing digit no longer needed because of the starting values of the digit's
+                                    {
 
                                         found++;
                                     }
                                 }
-                                if (ValueCalcualtor(digitone, digitTwo, digitThree, digitFour, digitFive, digitSix) >= MAXVALUE) {
+                                if (ValueCalcualtor(digitOne, digitTwo, digitThree, digitFour, digitFive, digitSix) >= MAXVALUE) {
                                     System.out.println(found);
                                     exit(0);
                                 }
@@ -65,7 +61,7 @@ public class Four {
                 return  false;
     }
 
-
+// no longer needed, because of the starting values of the digits
     static boolean checkIncreasingValues(int een, int twee, int drie, int vier, int vijf, int zes) {
         return (een <= twee &&
                 twee <= drie &&
