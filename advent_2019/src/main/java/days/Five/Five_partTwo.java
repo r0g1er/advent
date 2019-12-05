@@ -9,9 +9,9 @@ import static java.lang.System.exit;
 public final class Five_partTwo {
     public static void main(String[] args) {
         ArrayCreator creator = new ArrayCreator();
-//        int[] startArray = creator.createIntArrayFromfile("src/main/java/days/Five/input", ",");
+        int[] startArray = creator.createIntArrayFromfile("src/main/java/days/Five/input", ",");
 
-        int[] startArray= {3,21,1008,21,8,20,1005,20,22,107,8,21,20,1006,20,31,1106,0,36,98,0,0,1002,21,125,20,4,20,1105,1,46,104,999,1105,1,46,1101,1000,1,20,4,20,1105,1,46,98,99};
+//        int[] startArray= {3,21,1008,21,8,20,1005,20,22,107,8,21,20,1006,20,31,1106,0,36,98,0,0,1002,21,125,20,4,20,1105,1,46,104,999,1105,1,46,1101,1000,1,20,4,20,1105,1,46,98,99};
 //        int[] startArray= {3,9,8,9,10,9,4,9,99,-1,8}; // if input is 8, result is 1, orther it is 0
 //        int[] startArray= {3,3,1108,-1,8,3,4,3,99}; // if input is 8, result is 1, orther it is 0
 //        int[] startArray= {3,9,7,9,10,9,4,9,99,-1,8}; // if input is smaller than 8, result is 1, orther it is 0
@@ -25,6 +25,8 @@ public final class Five_partTwo {
 //        startArray[1]=12;
 //        startArray[2]=2;
 
+
+        //answer 3970568 is to low
         int increase;
         for (int i = 0; i < startArray.length; i += increase) {
             System.out.println("start op loop---");
@@ -43,24 +45,24 @@ public final class Five_partTwo {
 
             System.out.println("instructionsOptcode = is " + instructionsOptcode);
             System.out.println("modes:  " + modeOne + " " + modeTwo + " " + modeThree);
-            if (instructionsOptcode == 99) {
+            if (whatToDo== 99 ||whatToDo==9) {
                 exit(0);
             }
             int one = startArray[i + 1];
 
             int two = startArray[i + 2];
-            int three=0;
-            if(whatToDo==4 ||whatToDo==5|| whatToDo==6){
+            int three = 0;
+            if (whatToDo == 4 || whatToDo == 5 || whatToDo == 6) {
 
-            }else {
+            } else {
                 three = startArray[i + 3];
             }
             System.out.println("First value to use = " + one);
             System.out.println("Second value to use = " + two);
             System.out.println("Third value to use = " + three);
             int valueOne;
-            int valueTwo=0;
-            int valueThree=0;
+            int valueTwo = 0;
+            int valueThree = 0;
 
             if (modeOne == 1) {
                 valueOne = one;
@@ -68,14 +70,14 @@ public final class Five_partTwo {
                 valueOne = startArray[one];
             }
             System.out.println("First value results in " + valueOne);
-            if (whatToDo == 1 || whatToDo == 2|| whatToDo ==5|| whatToDo ==6|| whatToDo ==7|| whatToDo ==8) {
+            if (whatToDo == 1 || whatToDo == 2 || whatToDo == 5 || whatToDo == 6 || whatToDo == 7 || whatToDo == 8) {
                 if (modeTwo == 1) {
                     valueTwo = two;
                 } else {
                     valueTwo = startArray[two];
                 }
             }
-            if (whatToDo == 1 || whatToDo == 2|| whatToDo ==7|| whatToDo ==8) {
+            if (whatToDo == 1 || whatToDo == 2 || whatToDo == 7 || whatToDo == 8) {
                 if (modeThree == 1) {
                     valueThree = three;
                 } else {
@@ -109,55 +111,58 @@ public final class Five_partTwo {
                 case 4: {
                     System.out.println("output---------------------------------------------------------");
                     System.out.println(valueOne);
+//                    System.out.println(one);
+//                    System.out.println(startArray[one]);
+//                    System.out.println(startArray[valueOne]);
                     increase = 2;
                     break;
                 }
-                case 5:{
+                case 5: {
                     //Opcode 5 is jump-if-true: if the first parameter is non-zero, it sets the instruction pointer to the value from the second parameter. Otherwise, it does nothing.
 
 
-
-                    if (startArray[valueOne]!=0){
-//                    if (valueOne!=0){
-
+//                    if (startArray[valueOne]!=0){
+                    if (valueOne != 0) {
+//                        i=startArray[two];
 //                        i=startArray[valueTwo];
-                        i=valueTwo;
+                        i = valueTwo;//denk dat dit hem moet zijn
 //                        i=two;
 
-                        increase=0;
-                    }else{
-                        increase=2;
+                        increase = 0;
+                    } else {
+                        increase = 3;
                     }
                     break;
                 }
-                case 6:{
-                    if (startArray[valueOne]==0){
-//                    if (valueOne==0){
+                case 6: {
+//                    if (startArray[valueOne]==0){
+                    if (valueOne == 0) {
 
+//                        i=startArray[two];
 //                        i=startArray[valueTwo];
-                        i=valueTwo;
+                        i = valueTwo;//denk dat dit hem moet zijn
 //                        i=two;
-                        increase=0;
-                    }else{
-                        increase=2;
+                        increase = 0;
+                    } else {
+                        increase = 3;
                     }
 
                     break;
                 }
-                case 7:{
-                    int upDateValue=0;
-                    if(startArray[valueOne]<startArray[valueTwo]){
-                        upDateValue=1;
+                case 7: {
+                    int upDateValue = 0;
+                    if (startArray[valueOne] < startArray[valueTwo]) {
+                        upDateValue = 1;
                     }
-                    startArray[three]=upDateValue;
+                    startArray[three] = upDateValue;
                     break;
                 }
-                case 8:{
-                    int upDateValue=0;
-                    if(startArray[valueOne]==startArray[valueTwo]){
-                        upDateValue=1;
+                case 8: {
+                    int upDateValue = 0;
+                    if (startArray[valueOne] == startArray[valueTwo]) {
+                        upDateValue = 1;
                     }
-                    startArray[three]=upDateValue;
+                    startArray[three] = upDateValue;
                     break;
                 }
                 case 9:
@@ -179,5 +184,4 @@ public final class Five_partTwo {
             System.out.println("End of loop---");
         }
     }
-    //444 is too low
 }
