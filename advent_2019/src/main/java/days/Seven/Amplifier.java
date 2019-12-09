@@ -1,6 +1,8 @@
 package days.Seven;
 
 
+import days.Three.ArrayCreator;
+
 import static java.lang.System.exit;
 
 public class Amplifier {
@@ -8,27 +10,50 @@ public class Amplifier {
     private int inputSecond;
     private boolean usedInput;
     public int[] delijst;
-    private int output = -1000;
+    private int output;
+    int i;
+    public boolean kapot;
+    String name;
 
-    public Amplifier(int a, int b, int[] dezelijst) {
+    public Amplifier(int a, int b, int[] dezelijst, String naam) {
         inputFirst = a;
         inputSecond = b;
         usedInput = false;
+        kapot = false;
         delijst = dezelijst;
+        i = 0;
+        name = naam;
     }
-public void updateInputB(int nieuweWaarde){
+
+    public Amplifier(int a, int b, int[] dezelijst) {
+        this(a, b, dezelijst, "niet gedefinieerd");
+    }
+
+
+    public void updateInputB(int nieuweWaarde) {
         inputSecond = nieuweWaarde;
-}
-    public void reset(int a, int b){
+//        inputFirst = nieuweWaarde;
+//    usedInput=false;
+    }
+
+    public void reset(int a, int b) {
         inputFirst = a;
         inputSecond = b;
 //        usedInput = false;
     }
 
+    public void setInputSecond(int b) {
+        inputSecond = b;
+        inputFirst = b;
+    }
+
     public int run() {
+//        System.out.println(i + "dit is i bij de start");
         int increase = -1000;
         boolean nogVerder = true;
-        for (int i = 0; i < delijst.length && nogVerder; i += increase) {
+//        System.out.println(i);
+//        System.out.println("we doen heteven " + name);
+        for (; i < delijst.length && nogVerder; i += increase) {
             int instructionsOptcode = delijst[i];
             int whatToDo = instructionsOptcode % 100;
 
@@ -72,7 +97,7 @@ public void updateInputB(int nieuweWaarde){
                     int deInput = usedInput ? inputSecond : inputFirst;
                     usedInput = true;
                     delijst[one] = deInput;//never writes in imediate mote
-//                    System.out.println("store 5 on location " + one);
+//                    System.out.println(name + " stored input: " + deInput);
                     increase = 2;
 
                     break;
@@ -84,9 +109,9 @@ public void updateInputB(int nieuweWaarde){
 //                    System.out.println("output---------------------------------------------------------");
 //                    System.out.println(valueOne);
                     output = valueOne;
-                    increase = 2;
-//                    return output;
-                    break;
+                    i = i + 2;
+                    return output;
+//                    break;
                 }
                 case 5: {
                     //Opcode 5 is jump-if-true: if the first parameter is non-zero, it sets the instruction pointer to the value from the second parameter. Otherwise, it does nothing.
@@ -151,13 +176,21 @@ public void updateInputB(int nieuweWaarde){
 //                    System.out.println(delijst[0]);
 //                    System.out.println(delijst[0]);
                     nogVerder = false;
+                    i=0;
+                    increase=0;
+                    ArrayCreator ding = new ArrayCreator();
+//                    delijst= ding.createIntArrayFromfile("src/main/java/days/Seven/input", ",");
+                    System.out.println("999 is hit it is hit it is hit, i repeat it it hit " + name + " is down");
+                    kapot=true;
+
                     break;
                 }
                 default:
+                    System.out.println("shits gone wrong" + name);
                     System.out.println("shits gone wrong");
-                    System.out.println("shits gone wrong");
+//                    return -12345678;
                     exit(1);
-                    break;
+//                    break;
             }
 
         }

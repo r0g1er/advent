@@ -42,22 +42,22 @@ public class Seven {
                             amplifierD = vuller.run();
                             amplifierE = vuller.run();
 
-                            Amplifier programmaA = new Amplifier(a, 0, amplifierA);
+                            Amplifier programmaA = new Amplifier(a, 0, amplifierA, "AmplifierA");
                             int antwoordA = programmaA.run();
 
-                            Amplifier programmaB = new Amplifier(b, antwoordA, amplifierB);
+                            Amplifier programmaB = new Amplifier(b, antwoordA, amplifierB, "AmplifierB");
                             int antwoordB = programmaB.run();
 
 
-                            Amplifier programmaC = new Amplifier(c, antwoordB, amplifierC);
+                            Amplifier programmaC = new Amplifier(c, antwoordB, amplifierC, "AmplifierC");
                             int antwoordC = programmaC.run();
 
 
-                            Amplifier programmaD = new Amplifier(d, antwoordC, amplifierD);
+                            Amplifier programmaD = new Amplifier(d, antwoordC, amplifierD, "AmplifierD");
                             int antwoordD = programmaD.run();
 
 
-                            Amplifier programmaE = new Amplifier(e, antwoordD, amplifierE);
+                            Amplifier programmaE = new Amplifier(e, antwoordD, amplifierE, "AmplifierE");
                             int antwoordE = programmaE.run();
 
                             System.out.println("                      " +antwoordE);

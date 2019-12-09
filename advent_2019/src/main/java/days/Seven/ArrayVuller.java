@@ -9,11 +9,11 @@ public class ArrayVuller {
 
         ArrayCreator ding = new ArrayCreator();
 
-//        int[] amplifier = ding.createIntArrayFromfile("src/main/java/days/Seven/input", ",");
+        int[] amplifier = ding.createIntArrayFromfile("src/main/java/days/Seven/input", ",");
 
 //        deel2 voorbeeld
-        int[] amplifier = {3,26,1001,26,-4,26,3,27,1002,27,2,27,1,27,26,
-                27,4,27,1001,28,-1,28,1005,28,6,99,0,0,5};
+//        int[] amplifier = {3,26,1001,26,-4,26,3,27,1002,27,2,27,1,27,26,
+//                27,4,27,1001,28,-1,28,1005,28,6,99,0,0,5};
 
         //deel 2 voorbeeld b
 //        int [] amplifier = {3,52,1001,52,-5,52,3,53,1,52,56,54,1007,54,5,55,1005,55,26,1001,54,
@@ -30,7 +30,7 @@ public class ArrayVuller {
 
 
 //                int[] amplifier = {3, 31, 3, 32, 1002, 32, 10, 32, 1001, 31, -2, 31, 1007, 31, 0, 33, 1002, 33, 7, 33, 1, 33, 31, 31, 1, 32, 31, 31, 4, 31, 99, 0, 0, 0};
-        System.out.println("nieuwe array gemaakt");
+//        System.out.println("nieuwe array gemaakt");
         return amplifier;
 
     }
